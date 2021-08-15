@@ -4,9 +4,9 @@ def call(body)
 	body.resolveStrategy = Closure.DELEGATE_FIRST
 	body.delegate = config
 	body()
-	def mavenGoals = config.buildCommands
+	def mavenGoals = config.mavenGoals
 	def branchName = config.branchName
-	def buildFileLocation = config.buildFileLocation
+	def pomLocation = config.pomLocation
 	sh """
 	mvn ${WORKSPACE}/settings.xml ${mavenGoals} -f ${WORKSPACE}/${pomLocation}
 	"""
