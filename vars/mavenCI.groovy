@@ -11,7 +11,7 @@ def call(body){
 			//Maven stage
 			maven{
 				mavenGoals = "${buildGoals}"
-				pomLocation = "${pomFileLocation}
+				pomLocation = "${pomFileLocation}"
 				}
 				}
 			//Sonar Stage
