@@ -7,7 +7,7 @@ def call(body){
 		def pomFileLocation = config.buildFileLocation
 		def propertiesFileLocation = config.propertiesFileLocation
 			node{
-			Stage("buildType build"){
+			stage("buildType build"){
 			//Maven stage
 			maven{
 				mavenGoals = "${buildGoals}"
@@ -20,7 +20,7 @@ def call(body){
 				sonarPropertiesFile = "${propertiesFileLocation}"
 				}	
 			}
-			Stage("wait for Quality Gate"){
+			stage("wait for Quality Gate"){
 				timeout (time: 1, unit: 'HOURS'){
 					def qualityGate = waitForQualityGate()
 					if(qualityGate.status != 'OK'){
