@@ -1,12 +1,12 @@
 def call(body){
 		def config = [:]
-		body.resloveStrategy = Closure.DELEGATE_FIRST
+		body.resolveStrategy = Closure.DELEGATE_FIRST
 		body.delegate = config
 		body()
 		def buildGoals = config.buildCommands
 		def pomFileLocation = config.buildFileLocation
 		def propertiesFileLocation = config.propertiesFileLocation
-		echo "${pomFileLocation}"
+		print(config.buildFileLocation)
 			node{
 			stage("scm checkout"){
 			checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/maheedhar132/task.git']]])
