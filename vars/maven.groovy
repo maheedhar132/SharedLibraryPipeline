@@ -6,7 +6,7 @@ def call(body)
 	body()
 	def mavenGoals = config.mavenGoals
 	def branchName = config.branchName
-	def pomLocation = config.pomFileLocation
+	def pomLocation = config.pomLocation
 	sh """
 	mvn ${WORKSPACE}/settings.xml ${mavenGoals} -f ${WORKSPACE}/${pomLocation}
 	"""
