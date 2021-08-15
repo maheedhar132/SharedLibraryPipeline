@@ -6,7 +6,7 @@ def call(body){
 		def buildGoals = config.buildCommands
 		def pomFileLocation = config.buildFileLocation
 		def propertiesFileLocation = config.propertiesFileLocation
-		echo ${pomFileLocation}
+		echo "${pomFileLocation}"
 			node{
 			stage("scm checkout"){
 			checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/maheedhar132/task.git']]])
