@@ -14,11 +14,11 @@ def call(body){
 			}
 			stage("buildType build"){
 			//Maven stage
-			def pomFileLocation = "${pomFileLocation}"
+			def pomFile = "${pomFileLocation}"
 			echo "${pomFileLocation}"
 			maven{
 				mavenGoals = "${buildGoals}"
-				pomLocation = "${pomFileLocation}"
+				pomLocation = "${pomFile}"
 				}
 				}
 			//Sonar Stage
