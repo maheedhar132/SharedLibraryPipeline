@@ -14,6 +14,8 @@ def call(body){
 			}
 			stage("buildType build"){
 			//Maven stage
+			def pomFileLocation = "${pomFileLocation}"
+			echo "${pomFileLocation}"
 			maven{
 				mavenGoals = "${buildGoals}"
 				pomLocation = "${pomFileLocation}"
