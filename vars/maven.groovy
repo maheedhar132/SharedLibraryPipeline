@@ -8,6 +8,6 @@ def call(body)
 	def branchName = config.branchName
 	def pomLocation = config.pomLocation
 	sh """
-	mvn ${WORKSPACE}/settings.xml ${mavenGoals} -f ${WORKSPACE}/${pomLocation}
+	mvn ${mavenGoals} -f ${WORKSPACE}/${pomLocation}
 	"""
 }
